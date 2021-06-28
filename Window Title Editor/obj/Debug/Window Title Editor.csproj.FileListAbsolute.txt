@@ -1,0 +1,9 @@
+C:\Users\Josh\source\repos\Window Title Editor\Window Title Editor\bin\Debug\Window Title Editor.exe
+C:\Users\Josh\source\repos\Window Title Editor\Window Title Editor\bin\Debug\Window Title Editor.pdb
+C:\Users\Josh\source\repos\Window Title Editor\Window Title Editor\obj\Debug\Window Title Editor.csprojAssemblyReference.cache
+C:\Users\Josh\source\repos\Window Title Editor\Window Title Editor\obj\Debug\Window_Title_Editor.Properties.Resources.resources
+C:\Users\Josh\source\repos\Window Title Editor\Window Title Editor\obj\Debug\Window Title Editor.csproj.GenerateResource.cache
+C:\Users\Josh\source\repos\Window Title Editor\Window Title Editor\obj\Debug\Window Title Editor.csproj.CoreCompileInputs.cache
+C:\Users\Josh\source\repos\Window Title Editor\Window Title Editor\obj\Debug\Window Title Editor.exe
+C:\Users\Josh\source\repos\Window Title Editor\Window Title Editor\obj\Debug\Window Title Editor.pdb
+C:\Users\Josh\source\repos\Window Title Editor\Window Title Editor\obj\Debug\Window_Title_Editor.MainFRM.resources
