@@ -6,7 +6,7 @@ This allows you to edit the title of a running process.
 TitleEditor("List", YourComboBoxName);
 ```
 
-###### Edit Tile
+###### Editing The Title Of Selected Process
 ```cs
  TitleEditor("Edit", YourComboBoxName, YourComboBoxName.Text, YourTextBoxName.Text);
 ```
