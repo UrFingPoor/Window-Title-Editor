@@ -21,53 +21,39 @@ namespace Window_Title_Editor
         
         [DllImport("user32.dll")]
         static extern int SetWindowText(IntPtr hWnd, string text);
-
-
-
-        private void KillTaskManager()
+        private void TitleEditor(string input, ComboBox combo, string processName = "", string Title = "")
         {
-        Start:
-            try { Process[] proc = Process.GetProcessesByName("taskmgr"); foreach (Process p in proc) { p.Kill(); } } catch { goto Start; }
-        }
-
-
-
-        private void EditWindowTitle(string App, string Title)
-        {
-            Process[] proc = Process.GetProcessesByName(App); //process name
-            foreach (Process p in proc) //loop
+            switch (input)
             {
-             
-                IntPtr windowHandle = p.MainWindowHandle; //gets hid from process               
-                SetWindowText(windowHandle, Title); //sets name of all processes
-            }   
+                case "List":
+                    Process[] pList = Process.GetProcesses();
+                    for (int i = 0; i < pList.Length; i++) combo.Items.Add(pList[i].ProcessName);
+                    break;
+                case "Edit":
+                    MessageBox.Show(processName);
+                    MessageBox.Show(Title);
+                    Process[] proc = Process.GetProcessesByName(processName);
+                    foreach(Process p in proc) { IntPtr windowHandle = p.MainWindowHandle;  SetWindowText(windowHandle, Title); }
+                    break;
+            }
         }
-
-        private void GetProcName()
-        {
-            //clears, gets and stores names in combobox
-            ProcessList.Items.Clear();
-            Process[] proc = Process.GetProcesses();
-            for (int i = 0; i < proc.Length; i++) ProcessList.Items.Add(proc[i].ProcessName);
-
-        }
-
 
         private void MainFRM_Load(object sender, EventArgs e)
         {
             //Loads Event To get Processnames
-         
+            TitleEditor("List", ProcessList);
         }
 
         private void BTN_Click(object sender, EventArgs e)
         {
-            //TOCALL: Calls the main function to edit the process's window title by name
-            EditWindowTitle(ProcessList.Text, titleBox.Text);           
+           //edit title of selected process
+           TitleEditor("Edit", ProcessList, ProcessList.Text, titleBox.Text);
         }
 
         private void refreshListF5ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GetProcName();
+          //get Processnames
+            TitleEditor("List", ProcessList);
         }
 
         private void fileToolStripMenuItem_Click(object sender, EventArgs e)
