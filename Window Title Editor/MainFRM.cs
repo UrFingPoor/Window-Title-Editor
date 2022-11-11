@@ -30,8 +30,6 @@ namespace Window_Title_Editor
                     for (int i = 0; i < pList.Length; i++) combo.Items.Add(pList[i].ProcessName);
                     break;
                 case "Edit":
-                    MessageBox.Show(processName);
-                    MessageBox.Show(Title);
                     Process[] proc = Process.GetProcessesByName(processName);
                     foreach(Process p in proc) { IntPtr windowHandle = p.MainWindowHandle;  SetWindowText(windowHandle, Title); }
                     break;
